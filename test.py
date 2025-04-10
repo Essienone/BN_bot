@@ -22,11 +22,11 @@ def test():
 
 
 def main():
-    # 开始快捷键为ctrl+alt+c
+    # 开始快捷键为alt+c
     print("开始执行脚本...")
-    keyboard.add_hotkey("ctrl+alt+c", test)
-    # 结束快捷键为ctrl+alt+v
-    keyboard.wait("ctrl+alt+v")
+    keyboard.add_hotkey("alt+c", test)
+    # 结束快捷键为alt+v
+    keyboard.wait("alt+v")
 
 if __name__ == '__main__':
     main()

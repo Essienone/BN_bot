@@ -1,5 +1,3 @@
-from pyautogui import scroll
-
 from function import *
 
 # 格林镇默认位置
