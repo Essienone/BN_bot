@@ -15,7 +15,7 @@ def test():
             else:
                 time.sleep(1)
         """
-        green_lumber(scroll_flag)
+        green_attack(scroll_flag, map_green_stone_image)
         time.sleep(2)
         deploy_units()
         time.sleep(2)

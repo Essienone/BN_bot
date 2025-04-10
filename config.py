@@ -10,7 +10,7 @@ defeat_msg_image = 'src/defeat_msg_box.png'
 victory_msg_image = 'src/victory_msg_box.png'
 
 map_green_lumber_image = 'src/green_lumber.png'
-map_green_stone_iron_image = 'src/green_stone_iron.png'
+map_green_stone_image = 'src/green_stone.png'
 
 unit_bar_index_image = 'src/unit_bar_index.png'
 tank_killer_bar_image = 'src/tank_killer_in_bar.png'
