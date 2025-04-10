@@ -4,8 +4,9 @@ from map import *
 
 
 def test():
-
+    scroll_flag = False
     while True:
+        """
         while True:
             if is_in_map():
                 # green_default()
@@ -13,6 +14,8 @@ def test():
                 break
             else:
                 time.sleep(1)
+        """
+        green_lumber(scroll_flag)
         time.sleep(2)
         deploy_units()
         time.sleep(2)

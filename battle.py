@@ -2,6 +2,17 @@ from function import *
 
 # 部署全部单位开始战斗
 def deploy_units():
+    while True:
+        if is_in_battle():
+            break
+        else:
+            time.sleep(2)
+    ini_unit_bar()
+    time.sleep(game_react_period)
+    deploy_a_unit(tank_killer_bar_image)
+    time.sleep(game_react_period)
+    click_battle_start_button()
+    """
     if is_in_battle():
         ini_unit_bar()
         time.sleep(game_react_period)
@@ -13,6 +24,7 @@ def deploy_units():
         current_time = time.strftime("%H:%M:%S", t)
         print(current_time)
         raise Exception("脚本执行异常：在非战斗场景中不能部署")
+    """
 
 
 # 格林镇tk单刷小黄，一轮不死就撤退
@@ -71,7 +83,7 @@ def battle_tactics_1():
         if is_my_turn():
             t = time.localtime()
             current_time = time.strftime("%H%M%S", t)
-            pg.screenshot(f'record/TKBadHit_{current_time}.png')
+            # pg.screenshot(f'record/TKBadHit_{current_time}.png')
             retreat()
             break
         elif is_victory():

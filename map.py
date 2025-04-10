@@ -13,13 +13,18 @@ def green_default():
             time.sleep(1)
 
 # 格林镇木板
-def green_lumber():
-    time.sleep(1)
-    scroll_cnt = 0
-    while scroll_cnt < 5:
-        pg.scroll(-100)
-        scroll_cnt += 1
-        time.sleep(mouse_action_period)
+def green_lumber(scroll_flag):
+    while True:
+        if is_in_map():
+            break
+        else:
+            time.sleep(2)
+    if not scroll_flag:
+        scroll_cnt = 0
+        while scroll_cnt < 5:
+            pg.scroll(-100)
+            scroll_cnt += 1
+            time.sleep(mouse_action_period)
     click_attack_button()
     time.sleep(game_react_period)
     pg.moveTo(green_start_pos)
