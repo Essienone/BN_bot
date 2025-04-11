@@ -9,7 +9,8 @@ def deploy_units():
             time.sleep(2)
     ini_unit_bar()
     time.sleep(game_react_period)
-    deploy_a_unit(tank_killer_bar_image)
+    # deploy_a_unit(tank_killer_bar_image)
+    deploy_a_unit(raptor_bar_image)
     time.sleep(game_react_period)
     click_battle_start_button()
     """
@@ -27,15 +28,15 @@ def deploy_units():
     """
 
 
-# 格林镇tk单刷小黄，一轮不死就撤退
-def battle_tactics_1():
+# 格林镇单位单刷小黄，一轮不死就撤退
+def battle_tactics_1(unit_battle_image):
     while True:
         if is_my_turn():
             break
         else:
             time.sleep(4)
     try:
-        location = pg.locateOnScreen(tank_killer_battle_image, confidence=0.6)
+        location = pg.locateOnScreen(unit_battle_image, confidence=0.6)
     except pg.ImageNotFoundException:
         """
         t = time.localtime()
@@ -45,7 +46,7 @@ def battle_tactics_1():
         """
         t = time.localtime()
         current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedTK_{current_time}.png')
+        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
         retreat()
     else:
         time.sleep(mouse_action_period)
@@ -54,7 +55,7 @@ def battle_tactics_1():
         pg.mouseDown()
         time.sleep(mouse_action_period)
         pg.mouseUp()
-        # print("选中tk")
+        # print("选中")
     time.sleep(game_react_period)
     try:
         location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
@@ -78,7 +79,7 @@ def battle_tactics_1():
         pg.mouseDown()
         time.sleep(mouse_action_period)
         pg.mouseUp()
-        # print("tk开火")
+        # print("开火")
     while True:
         if is_my_turn():
             t = time.localtime()

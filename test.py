@@ -15,11 +15,11 @@ def test():
             else:
                 time.sleep(1)
         """
-        green_attack(scroll_flag, map_green_stone_image)
+        green_attack(scroll_flag, map_green_iron_image)
         time.sleep(2)
         deploy_units()
         time.sleep(2)
-        battle_tactics_1()
+        battle_tactics_1(raptor_battle_image)
 
 
 
