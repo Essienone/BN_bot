@@ -11,12 +11,15 @@ victory_msg_image = 'src/victory_msg_box.png'
 
 map_green_lumber_image = 'src/green_lumber.png'
 map_green_stone_image = 'src/green_stone.png'
+map_green_iron_image = 'src/green_iron.png'
 
 unit_bar_index_image = 'src/unit_bar_index.png'
 tank_killer_bar_image = 'src/tank_killer_in_bar.png'
 field_agent_bar_image = 'src/field_agent_in_bar.png'
+raptor_bar_image = 'src/raptor_in_bar.png'
 
 tank_killer_battle_image = 'src/tank_killer_in_battle.png'
+raptor_battle_image = 'src/raptor_in_battle.png'
 
 enemy_shock_troop_yellow_image = 'src/enemy_shock_troop_yellow.png'
 
