@@ -1,3 +1,5 @@
+import time
+
 from function import *
 
 # 部署全部单位开始战斗
@@ -9,7 +11,8 @@ def deploy_units():
             time.sleep(2)
     ini_unit_bar()
     time.sleep(game_react_period)
-    # deploy_a_unit(tank_killer_bar_image)
+    deploy_a_unit(light_tank_bar_image)
+    time.sleep(game_react_period)
     deploy_a_unit(raptor_bar_image)
     time.sleep(game_react_period)
     click_battle_start_button()

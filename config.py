@@ -17,6 +17,7 @@ unit_bar_index_image = 'src/unit_bar_index.png'
 tank_killer_bar_image = 'src/tank_killer_in_bar.png'
 field_agent_bar_image = 'src/field_agent_in_bar.png'
 raptor_bar_image = 'src/raptor_in_bar.png'
+light_tank_bar_image = 'src/light_tank_in_bar.png'
 
 tank_killer_battle_image = 'src/tank_killer_in_battle.png'
 raptor_battle_image = 'src/raptor_in_battle.png'
