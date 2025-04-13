@@ -20,9 +20,9 @@ def test():
         deploy_units()
         time.sleep(2)
         battle_tactics_1(raptor_battle_image)
-
-
-
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        print(current_time)
 
 def main():
     # 开始快捷键为alt+c
