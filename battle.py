@@ -11,9 +11,9 @@ def deploy_units():
             time.sleep(2)
     ini_unit_bar()
     time.sleep(game_react_period)
-    deploy_a_unit(light_tank_bar_image)
-    time.sleep(game_react_period)
     deploy_a_unit(raptor_bar_image)
+    time.sleep(game_react_period)
+    deploy_a_unit(light_tank_bar_image)
     time.sleep(game_react_period)
     click_battle_start_button()
     """
@@ -50,7 +50,9 @@ def battle_tactics_1(unit_battle_image):
         t = time.localtime()
         current_time = time.strftime("%H%M%S", t)
         # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
+        print("unit not found")
         retreat()
+        return
     else:
         time.sleep(mouse_action_period)
         pg.moveTo(location)
@@ -72,6 +74,7 @@ def battle_tactics_1(unit_battle_image):
         t = time.localtime()
         current_time = time.strftime("%H%M%S", t)
         # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
+        print("target not found")
         retreat()
         return
     else:
@@ -88,12 +91,13 @@ def battle_tactics_1(unit_battle_image):
             t = time.localtime()
             current_time = time.strftime("%H%M%S", t)
             # pg.screenshot(f'record/TKBadHit_{current_time}.png')
+            print("unable to eliminate")
             retreat()
-            break
+            return
         elif is_victory():
             pg.moveTo(battle_over_msg_btn_pos)
             time.sleep(mouse_action_period)
             pg.click(clicks=2, interval=1)
-            break
+            return
         else:
             time.sleep(1)

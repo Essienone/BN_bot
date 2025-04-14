@@ -123,3 +123,4 @@ def retreat():
         current_time = time.strftime("%H:%M:%S", t)
         print(current_time)
         raise Exception("脚本执行异常：在非战斗场景不能撤退")
+    print("retreat！")
