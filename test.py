@@ -19,7 +19,7 @@ def test():
         time.sleep(2)
         deploy_units()
         time.sleep(2)
-        battle_tactics_1(raptor_battle_image)
+        battle_tactics_2(light_tank_battle_image, raptor_battle_image)
         t = time.localtime()
         current_time = time.strftime("%H%M%S", t)
         print(current_time)

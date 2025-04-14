@@ -101,3 +101,107 @@ def battle_tactics_1(unit_battle_image):
             return
         else:
             time.sleep(1)
+
+# 格林镇单刷小黄，一轮带蹭经验，两轮轮不死就撤退（待优化）
+def battle_tactics_2(unit_battle_image_1, unit_battle_image_2):
+    # 第一轮
+    while True:
+        if is_my_turn():
+            break
+        else:
+            time.sleep(4)
+    try:
+        location = pg.locateOnScreen(unit_battle_image_1, confidence=0.6)
+    except pg.ImageNotFoundException:
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
+        print("unit not found")
+        retreat()
+        return
+    else:
+        time.sleep(mouse_action_period)
+        pg.moveTo(location)
+        time.sleep(mouse_action_period)
+        pg.mouseDown()
+        time.sleep(mouse_action_period)
+        pg.mouseUp()
+        # print("选中")
+    time.sleep(game_react_period)
+    try:
+        location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
+    except pg.ImageNotFoundException:
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
+        print("target not found")
+        retreat()
+        return
+    else:
+        time.sleep(mouse_action_period)
+        pg.moveTo(location)
+        time.sleep(mouse_action_period)
+        pg.mouseDown()
+        time.sleep(mouse_action_period)
+        pg.mouseUp()
+        # print("开火")
+    # 第二轮
+    while True:
+        if is_my_turn():
+            break
+        elif is_victory():
+            pg.moveTo(battle_over_msg_btn_pos)
+            time.sleep(mouse_action_period)
+            pg.click(clicks=2, interval=1)
+            return
+        else:
+            time.sleep(1)
+    try:
+        location = pg.locateOnScreen(unit_battle_image_2, confidence=0.6)
+    except pg.ImageNotFoundException:
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
+        print("unit not found")
+        retreat()
+        return
+    else:
+        time.sleep(mouse_action_period)
+        pg.moveTo(location)
+        time.sleep(mouse_action_period)
+        pg.mouseDown()
+        time.sleep(mouse_action_period)
+        pg.mouseUp()
+        # print("选中")
+    time.sleep(game_react_period)
+    try:
+        location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
+    except pg.ImageNotFoundException:
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
+        print("target not found")
+        retreat()
+        return
+    else:
+        time.sleep(mouse_action_period)
+        pg.moveTo(location)
+        time.sleep(mouse_action_period)
+        pg.mouseDown()
+        time.sleep(mouse_action_period)
+        pg.mouseUp()
+    while True:
+        if is_my_turn():
+            t = time.localtime()
+            current_time = time.strftime("%H%M%S", t)
+            # pg.screenshot(f'record/TKBadHit_{current_time}.png')
+            print("unable to eliminate")
+            retreat()
+            return
+        elif is_victory():
+            pg.moveTo(battle_over_msg_btn_pos)
+            time.sleep(mouse_action_period)
+            pg.click(clicks=2, interval=1)
+            return
+        else:
+            time.sleep(1)

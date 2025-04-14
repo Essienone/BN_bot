@@ -21,6 +21,7 @@ light_tank_bar_image = 'src/light_tank_in_bar.png'
 
 tank_killer_battle_image = 'src/tank_killer_in_battle.png'
 raptor_battle_image = 'src/raptor_in_battle.png'
+light_tank_battle_image = 'src/light_tank_in_battle.png'
 
 enemy_shock_troop_yellow_image = 'src/enemy_shock_troop_yellow.png'
 
