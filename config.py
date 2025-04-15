@@ -1,5 +1,4 @@
 # 本地图像文件
-# steam_button_image = 'src/steam_play.png'
 map_attack_image = 'src/attack_button.png'
 map_attack_confirm_image = 'src/attack_confirm.png'
 in_battle_pass_image = 'src/pass_button.png'
@@ -29,12 +28,26 @@ enemy_shock_troop_yellow_image = 'src/enemy_shock_troop_yellow.png'
 mouse_action_period = 0.1
 game_react_period = 0.5
 
-# 屏幕位置坐标
+# 地图位置坐标
+# 攻击位置选取默认位置
 green_start_pos = (980, 510)
+# 地图攻击按钮位置
 map_attack_btn_pos = (1840, 1000)
+
+# 战斗中位置坐标
+# 单位栏左侧
 unit_bar_pos = (960, 1020)
+# 撤退按钮
 battle_retreat_btn_pos = (60, 190)
+# 开始战斗按钮
 battle_fight_btn_pos = (1780, 760)
+# 结算界面确认按钮
 battle_over_msg_btn_pos = (1180, 770)
+# 放大镜下位
 battle_observe_btn1_pos = (1840, 1000)
+# 放大镜上位
 battle_observe_btn2_pos = (1840, 840)
+# 敌方第一排从左往右
+enemy_row_1 = [(760, 260), (920, 360), (1070, 440), (1220, 510), (1380, 590)]
+# 我方第一排从左往右
+allied_row_1 = [(540, 380), (680, 470), (840, 560), (990, 640), (1130, 730)]
