@@ -16,76 +16,37 @@ def deploy_units():
     deploy_a_unit(light_tank_bar_image)
     time.sleep(game_react_period)
     click_battle_start_button()
-    """
-    if is_in_battle():
-        ini_unit_bar()
-        time.sleep(game_react_period)
-        deploy_a_unit(tank_killer_bar_image)
-        time.sleep(game_react_period)
-        click_battle_start_button()
-    else:
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        print(current_time)
-        raise Exception("脚本执行异常：在非战斗场景中不能部署")
-    """
 
+# 从左往右遍历敌方第一排点击
+def attack_by_pos_1(unit_pos, skill_pos):
+    pg.moveTo(unit_pos)
+    time.sleep(mouse_action_period)
+    pg.mouseDown()
+    time.sleep(mouse_action_period)
+    pg.mouseUp()
+    time.sleep(mouse_action_period)
+    pg.moveTo(skill_pos)
+    time.sleep(mouse_action_period)
+    pg.mouseDown()
+    time.sleep(mouse_action_period)
+    pg.mouseUp()
+    time.sleep(mouse_action_period)
+    for row_pos in enemy_row_1_pos:
+        pg.moveTo(row_pos)
+        time.sleep(mouse_action_period)
+        pg.mouseDown()
+        time.sleep(mouse_action_period)
+        pg.mouseUp()
+        time.sleep(mouse_action_period)
 
 # 格林镇单位单刷小黄，一轮不死就撤退
-def battle_tactics_1(unit_battle_image):
+def battle_tactics_1():
     while True:
         if is_my_turn():
             break
         else:
             time.sleep(4)
-    try:
-        location = pg.locateOnScreen(unit_battle_image, confidence=0.6)
-    except pg.ImageNotFoundException:
-        """
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        print(current_time)
-        raise Exception("图像识别异常：未能找到tk")
-        """
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
-        print("unit not found")
-        retreat()
-        return
-    else:
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
-        # print("选中")
-    time.sleep(game_react_period)
-    try:
-        location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
-    except pg.ImageNotFoundException:
-        """
-        t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        print(current_time)
-        raise Exception("图像识别异常：未能找到有效目标")
-        """
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
-        print("target not found")
-        retreat()
-        return
-    else:
-        # print(f'小黄位置{location}')
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
-        # print("开火")
+    attack_by_pos_1(allied_row_1_pos[2], skill_slot_pos[0])
     while True:
         if is_my_turn():
             t = time.localtime()
@@ -103,48 +64,14 @@ def battle_tactics_1(unit_battle_image):
             time.sleep(1)
 
 # 格林镇单刷小黄，一轮带蹭经验，两轮轮不死就撤退（待优化）
-def battle_tactics_2(unit_battle_image_1, unit_battle_image_2):
+def battle_tactics_2():
     # 第一轮
     while True:
         if is_my_turn():
             break
         else:
             time.sleep(4)
-    try:
-        location = pg.locateOnScreen(unit_battle_image_1, confidence=0.6)
-    except pg.ImageNotFoundException:
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
-        print("unit not found")
-        retreat()
-        return
-    else:
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
-        # print("选中")
-    time.sleep(game_react_period)
-    try:
-        location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
-    except pg.ImageNotFoundException:
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
-        print("target not found")
-        retreat()
-        return
-    else:
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
-        # print("开火")
+    attack_by_pos_1(allied_row_1_pos[3], skill_slot_pos[0])
     # 第二轮
     while True:
         if is_my_turn():
@@ -156,40 +83,7 @@ def battle_tactics_2(unit_battle_image_1, unit_battle_image_2):
             return
         else:
             time.sleep(1)
-    try:
-        location = pg.locateOnScreen(unit_battle_image_2, confidence=0.6)
-    except pg.ImageNotFoundException:
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedUnit_{current_time}.png')
-        print("unit not found")
-        retreat()
-        return
-    else:
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
-        # print("选中")
-    time.sleep(game_react_period)
-    try:
-        location = pg.locateOnScreen(enemy_shock_troop_yellow_image, confidence=0.4)
-    except pg.ImageNotFoundException:
-        t = time.localtime()
-        current_time = time.strftime("%H%M%S", t)
-        # pg.screenshot(f'record/unrecognizedST_{current_time}.png')
-        print("target not found")
-        retreat()
-        return
-    else:
-        time.sleep(mouse_action_period)
-        pg.moveTo(location)
-        time.sleep(mouse_action_period)
-        pg.mouseDown()
-        time.sleep(mouse_action_period)
-        pg.mouseUp()
+    attack_by_pos_1(allied_row_1_pos[2], skill_slot_pos[0])
     while True:
         if is_my_turn():
             t = time.localtime()
