@@ -13,7 +13,11 @@ def deploy_units():
     time.sleep(game_react_period)
     deploy_a_unit(raptor_bar_image)
     time.sleep(game_react_period)
-    deploy_a_unit(light_tank_bar_image)
+    deploy_a_unit(wimp_bar_image)
+    time.sleep(game_react_period)
+    pg.moveTo(allied_row_1_pos[3])
+    time.sleep(mouse_action_period)
+    pg.dragTo(allied_row_2_pos[2], duration=0.3)
     time.sleep(game_react_period)
     click_battle_start_button()
 
@@ -71,7 +75,7 @@ def battle_tactics_2():
             break
         else:
             time.sleep(4)
-    attack_by_pos_1(allied_row_1_pos[3], skill_slot_pos[0])
+    attack_by_pos_1(allied_row_2_pos[2], skill_slot_pos[0])
     # 第二轮
     while True:
         if is_my_turn():

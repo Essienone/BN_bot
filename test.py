@@ -24,8 +24,10 @@ def auto_bot():
         print(current_time)
 
 def test():
-    attack_by_pos_1(allied_row_1_pos[2], skill_slot_pos[0])
-    # pg.moveTo(430, 1000)
+    # attack_by_pos_1(allied_row_1_pos[2], skill_slot_pos[0])
+    pg.moveTo(allied_row_1_pos[3])
+    time.sleep(mouse_action_period)
+    pg.dragTo(allied_row_2_pos[2], duration=0.5)
 
 def main():
     # 开始快捷键为alt+c
