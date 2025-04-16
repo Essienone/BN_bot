@@ -17,6 +17,7 @@ tank_killer_bar_image = 'src/tank_killer_in_bar.png'
 field_agent_bar_image = 'src/field_agent_in_bar.png'
 raptor_bar_image = 'src/raptor_in_bar.png'
 light_tank_bar_image = 'src/light_tank_in_bar.png'
+wimp_bar_image = 'src/wimp_in_bar.png'
 
 tank_killer_battle_image = 'src/tank_killer_in_battle.png'
 raptor_battle_image = 'src/raptor_in_battle.png'
@@ -51,6 +52,8 @@ battle_observe_btn2_pos = (1840, 840)
 enemy_row_1_pos = [(760, 260), (920, 360), (1070, 440), (1220, 510), (1380, 590)]
 # 我方第一排从左往右
 allied_row_1_pos = [(540, 380), (680, 470), (840, 560), (990, 640), (1130, 730)]
+# 我方第二排从左往右
+allied_row_2_pos = [(380, 470), (530, 550), (690, 630), (840, 700), (990, 780)]
 # 技能槽位置
 skill_slot_pos = [(430, 1000)]
 
