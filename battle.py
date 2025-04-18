@@ -13,6 +13,7 @@ def deploy_units():
     time.sleep(game_react_period)
     deploy_a_unit(raptor_bar_image)
     time.sleep(game_react_period)
+    ini_unit_bar()
     deploy_a_unit(wimp_bar_image)
     time.sleep(game_react_period)
     pg.moveTo(allied_row_1_pos[3])
