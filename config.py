@@ -41,7 +41,7 @@ tronk_attack_confirm_pos = (540, 1050)
 # 剑影石油位置
 crazy_blades_oil_pos = (1700, 400)
 # 剑影石油攻击确认位置
-crazy_blades_confirm_pos = (1680, 470)
+crazy_blades_confirm_pos = (1700, 470)
 
 # 战斗中位置坐标
 # 单位栏左侧
