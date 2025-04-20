@@ -11,13 +11,16 @@ def deploy_units():
             time.sleep(2)
     ini_unit_bar()
     time.sleep(game_react_period)
-    deploy_a_unit(raptor_bar_image)
+    deploy_a_unit(tank_killer_bar_image)
     time.sleep(game_react_period)
+    """
+    ini_unit_bar()
     deploy_a_unit(wimp_bar_image)
     time.sleep(game_react_period)
-    pg.moveTo(allied_row_1_pos[3])
+    pg.moveTo(allied_row_1_pos[2])
     time.sleep(mouse_action_period)
     pg.dragTo(allied_row_2_pos[2], duration=0.3)
+    """
     time.sleep(game_react_period)
     click_battle_start_button()
 
@@ -35,6 +38,34 @@ def deploy_units_tronk(unit_image):
         time.sleep(game_react_period)
     ini_unit_bar()
     deploy_a_unit(unit_image)
+    time.sleep(game_react_period)
+    pg.moveTo(allied_row_1_pos[4])
+    time.sleep(mouse_action_period)
+    pg.dragTo(allied_row_2_pos[2], duration=0.3)
+    for i in range(3):
+        deploy_a_unit(field_agent_bar_image)
+        time.sleep(game_react_period)
+    time.sleep(game_react_period)
+    pg.moveTo(allied_row_2_pos[4])
+    time.sleep(mouse_action_period)
+    pg.dragTo(allied_row_3_pos[1], duration=0.3)
+    time.sleep(game_react_period)
+    click_battle_start_button()
+
+# 剑影阵型
+def deploy_units_crazy_blades():
+    while True:
+        if is_in_battle():
+            break
+        else:
+            time.sleep(2)
+    ini_unit_bar()
+    time.sleep(game_react_period)
+    for i in range(3):
+        deploy_a_unit(light_tank_bar_image)
+        time.sleep(game_react_period)
+    ini_unit_bar()
+    deploy_a_unit(raptor_bar_image)
     time.sleep(game_react_period)
     pg.moveTo(allied_row_1_pos[4])
     time.sleep(mouse_action_period)
@@ -78,7 +109,7 @@ def battle_tactics_green_1():
             break
         else:
             time.sleep(3)
-    attack_by_pos_1(allied_row_1_pos[2], skill_slot_pos[0])
+    attack_by_pos_1(allied_row_2_pos[2], skill_slot_pos[0])
     while True:
         if is_my_turn():
             t = time.localtime()

@@ -12,7 +12,7 @@ def green_auto_bot():
         time.sleep(2)
         deploy_units()
         time.sleep(2)
-        battle_tactics_green_2()
+        battle_tactics_green_1()
         t = time.localtime()
         current_time = time.strftime("%H%M%S", t)
         print(current_time)
@@ -23,7 +23,7 @@ def tronk_auto_bot():
         tronk_attack(scroll_flag)
         scroll_flag = True
         time.sleep(2)
-        deploy_units_tronk(wimp_bar_image)
+        deploy_units_tronk(tank_killer_bar_image)
         time.sleep(2)
         battle_tactics_tronk()
         t = time.localtime()
@@ -31,12 +31,12 @@ def tronk_auto_bot():
         print(current_time)
 
 def test():
-    deploy_units_tronk(wimp_bar_image)
+    pg.moveTo(1600, 520)
 
 def main():
     # 开始快捷键为alt+c
     print("开始执行脚本...")
-    keyboard.add_hotkey("alt+c", tronk_auto_bot)
+    keyboard.add_hotkey("alt+c", test)
     # 结束快捷键为alt+v
     keyboard.wait("alt+v")
 
