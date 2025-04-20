@@ -233,3 +233,76 @@ def battle_tactics_tronk():
             else:
                 time.sleep(1)
         attack_by_pos_1(allied_row_2_pos[3], skill_slot_pos[0])
+
+# 剑影阵型公式化打法
+def battle_tactics_crazy_blades():
+    # 第一轮速龙打刺客
+    while True:
+        if is_my_turn():
+            break
+        else:
+            time.sleep(3)
+    attack_by_pos_1(allied_row_2_pos[2], skill_slot_pos[0])
+    while True:
+        # 第k轮(k>=2)
+        while True:
+            if is_my_turn():
+                break
+            elif is_victory():
+                pg.moveTo(battle_over_msg_btn_pos)
+                time.sleep(mouse_action_period)
+                pg.click(clicks=2, interval=1)
+                return
+            else:
+                time.sleep(1)
+        attack_by_pos_1(allied_row_2_pos[1], skill_slot_pos[1])
+        # 第k+1轮
+        while True:
+            if is_my_turn():
+                break
+            elif is_victory():
+                pg.moveTo(battle_over_msg_btn_pos)
+                time.sleep(mouse_action_period)
+                pg.click(clicks=2, interval=1)
+                return
+            else:
+                time.sleep(1)
+        attack_by_pos_1(allied_row_2_pos[3], skill_slot_pos[1])
+        # 第k+2轮
+        while True:
+            if is_my_turn():
+                break
+            elif is_victory():
+                pg.moveTo(battle_over_msg_btn_pos)
+                time.sleep(mouse_action_period)
+                pg.click(clicks=2, interval=1)
+                return
+            else:
+                time.sleep(1)
+        attack_by_pos_1(allied_row_3_pos[1], skill_slot_pos[1])
+        # 第k+3~k+5轮
+        for i in range(1, 4):
+            while True:
+                if is_my_turn():
+                    break
+                elif is_victory():
+                    pg.moveTo(battle_over_msg_btn_pos)
+                    time.sleep(mouse_action_period)
+                    pg.click(clicks=2, interval=1)
+                    return
+                else:
+                    time.sleep(1)
+            attack_by_pos_1(allied_row_2_pos[i], skill_slot_pos[0])
+        # 第k+6~k+8轮
+        for i in range(1, 4):
+            while True:
+                if is_my_turn():
+                    break
+                elif is_victory():
+                    pg.moveTo(battle_over_msg_btn_pos)
+                    time.sleep(mouse_action_period)
+                    pg.click(clicks=2, interval=1)
+                    return
+                else:
+                    time.sleep(1)
+            attack_by_pos_1(allied_row_1_pos[i], skill_slot_pos[0])

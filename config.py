@@ -38,6 +38,10 @@ map_attack_btn_pos = (1840, 1000)
 tronk_stone_pos = (500, 1000)
 # 绰克石堆攻击确认位置
 tronk_attack_confirm_pos = (540, 1050)
+# 剑影石油位置
+crazy_blades_oil_pos = (1700, 400)
+# 剑影石油攻击确认位置
+crazy_blades_confirm_pos = (1680, 470)
 
 # 战斗中位置坐标
 # 单位栏左侧

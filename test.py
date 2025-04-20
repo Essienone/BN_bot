@@ -30,13 +30,27 @@ def tronk_auto_bot():
         current_time = time.strftime("%H%M%S", t)
         print(current_time)
 
+def crazy_blades_auto_bot():
+    scroll_flag = False
+    while True:
+        crazy_blades_attack(scroll_flag)
+        scroll_flag = True
+        time.sleep(2)
+        deploy_units_crazy_blades()
+        time.sleep(2)
+        battle_tactics_crazy_blades()
+        t = time.localtime()
+        current_time = time.strftime("%H%M%S", t)
+        print(current_time)
+
 def test():
-    pg.moveTo(1600, 520)
+    a = False
+    crazy_blades_attack(a)
 
 def main():
     # 开始快捷键为alt+c
     print("开始执行脚本...")
-    keyboard.add_hotkey("alt+c", test)
+    keyboard.add_hotkey("alt+c", crazy_blades_auto_bot)
     # 结束快捷键为alt+v
     keyboard.wait("alt+v")
 
