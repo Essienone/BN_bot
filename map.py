@@ -63,3 +63,19 @@ def tronk_attack(scroll_flag):
     pg.moveTo(tronk_attack_confirm_pos)
     time.sleep(mouse_action_period)
     pg.click(clicks=2, interval=0.1)
+
+# 剑影默认攻击地点（石油）
+def crazy_blades_attack(scroll_flag):
+    while True:
+        if is_in_map():
+            break
+        else:
+            time.sleep(1)
+    if not scroll_flag:
+        pg.moveTo(map_attack_start_pos)
+        scroll_cnt = 0
+        while scroll_cnt < 3:
+            pg.scroll(-100)
+            scroll_cnt += 1
+            time.sleep(mouse_action_period)
+        pg.drag(0, -200, duration=0.5)
