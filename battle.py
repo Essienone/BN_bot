@@ -42,6 +42,7 @@ def deploy_units_tronk(unit_image):
     pg.moveTo(allied_row_1_pos[4])
     time.sleep(mouse_action_period)
     pg.dragTo(allied_row_2_pos[2], duration=0.3)
+    ini_unit_bar()
     for i in range(3):
         deploy_a_unit(field_agent_bar_image)
         time.sleep(game_react_period)
@@ -70,6 +71,7 @@ def deploy_units_crazy_blades():
     pg.moveTo(allied_row_1_pos[4])
     time.sleep(mouse_action_period)
     pg.dragTo(allied_row_2_pos[2], duration=0.3)
+    ini_unit_bar()
     for i in range(3):
         deploy_a_unit(field_agent_bar_image)
         time.sleep(game_react_period)
