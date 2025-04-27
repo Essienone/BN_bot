@@ -18,6 +18,7 @@ field_agent_bar_image = 'src/field_agent_in_bar.png'
 raptor_bar_image = 'src/raptor_in_bar.png'
 light_tank_bar_image = 'src/light_tank_in_bar.png'
 wimp_bar_image = 'src/wimp_in_bar.png'
+soldier_bar_image = 'src/soldier_in_bar.png'
 
 tank_killer_battle_image = 'src/tank_killer_in_battle.png'
 raptor_battle_image = 'src/raptor_in_battle.png'
